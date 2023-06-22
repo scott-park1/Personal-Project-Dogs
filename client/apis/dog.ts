@@ -12,3 +12,8 @@ export async function addDog(newDog: DogData): Promise<Dog> {
   const response = await request.post('/api/v1/dogs').send(newDog)
   return response.body.dogs
 }
+
+// DELETE /api/v1/dogs/:id
+export async function deleteDog(id: number): Promise<void> {
+  await request.delete(`/api/v1/dogs/${id}`)
+}
