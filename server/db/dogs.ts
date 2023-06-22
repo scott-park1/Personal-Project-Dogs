@@ -10,3 +10,8 @@ export async function addDog(newDog: DogData): Promise<Dog> {
   const [dog] = await db('dogs').insert(newDog).returning('*')
   return dog
 }
+
+export async function deleteDog(id: number): Promise<void> {
+  await db('dogs').where('id', id).delete()
+  return
+}
