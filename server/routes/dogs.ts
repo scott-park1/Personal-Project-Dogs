@@ -31,4 +31,15 @@ router.post('/', async (req, res) => {
   }
 })
 
+// DELETE /api/v1/dogs/:id
+router.delete('/:id', async (req, res) => {
+  try {
+    const deleteId = Number(req.params.id)
+    await db.deleteDog(deleteId)
+    res.sendStatus(200)
+  } catch (error) {
+    res.sendStatus(500)
+  }
+})
+
 export default router
