@@ -1,5 +1,6 @@
 import express from 'express'
 import * as db from '../db/dogs'
+import { DogData } from '../../models/dog'
 
 const router = express.Router()
 
@@ -37,6 +38,18 @@ router.delete('/:id', async (req, res) => {
     const deleteId = Number(req.params.id)
     await db.deleteDog(deleteId)
     res.sendStatus(200)
+  } catch (error) {
+    res.sendStatus(500)
+  }
+})
+
+// PATCH /api/v1/dogs/:id
+router.patch('/:id', async (req, res) => {
+  try {
+    const updateId = Number(req.params.id)
+    const updateDogData = req.body as DogData
+    const updatedDog = await db.updateDog(updateId, updateDogData)
+    res.json(updatedDog)
   } catch (error) {
     res.sendStatus(500)
   }
