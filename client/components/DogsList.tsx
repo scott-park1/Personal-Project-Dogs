@@ -1,5 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetchDogs } from '../apis/dog'
+import DogsForm from './DogsForm'
+import DeleteDog from './DeleteDog'
 
 function DogsList() {
   const {
@@ -29,9 +31,11 @@ function DogsList() {
                 <b>Breed:</b> {dog.breed}
               </p>
             </ul>
+            <DeleteDog id={dog.id} />
           </div>
         ))}
       </div>
+      <DogsForm />
     </>
   )
 }

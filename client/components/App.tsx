@@ -1,5 +1,4 @@
 import DogsList from './DogsList'
-import DogsForm from './DogsForm'
 
 function App() {
   return (
@@ -9,7 +8,6 @@ function App() {
       </header>
       <section className="main">
         <DogsList />
-        <DogsForm />
       </section>
     </>
   )

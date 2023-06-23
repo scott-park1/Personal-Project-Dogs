@@ -40,32 +40,34 @@ export default function DogsForm() {
   }
 
   return (
-    <form onSubmit={handleDogSubmit} aria-label="Add Dog Form">
-      <div>
-        <label htmlFor="name">
-          <b>Name:</b>
-        </label>
-        <br />
-        <input
-          id="name"
-          name="name"
-          onChange={handleDogChange}
-          value={form.name}
-        />
-      </div>
-      <div>
-        <label htmlFor="breed">
-          <b>Breed:</b>
-        </label>
-        <br />
-        <input
-          id="breed"
-          name="breed"
-          onChange={handleDogChange}
-          value={form.breed}
-        />
-      </div>
-      <button>Add Dog</button>
-    </form>
+    <div>
+      <form onSubmit={handleDogSubmit} aria-label="Add Dog Form">
+        <div>
+          <label htmlFor="name">
+            <b>Name:</b>
+          </label>
+          <br />
+          <input
+            id="name"
+            name="name"
+            onChange={handleDogChange}
+            value={form.name}
+          />
+        </div>
+        <div>
+          <label htmlFor="breed">
+            <b>Breed:</b>
+          </label>
+          <br />
+          <input
+            id="breed"
+            name="breed"
+            onChange={handleDogChange}
+            value={form.breed}
+          />
+        </div>
+        <button>Add Dog</button>
+      </form>
+    </div>
   )
 }
