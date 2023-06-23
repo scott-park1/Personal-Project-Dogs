@@ -28,9 +28,7 @@ export default function DeleteDog({ id }: DeleteProps) {
 
   return (
     <div>
-      <button className="button" onClick={handleDeleteDog}>
-        Delete Dog
-      </button>
+      <button onClick={handleDeleteDog}>Delete Dog</button>
     </div>
   )
 }

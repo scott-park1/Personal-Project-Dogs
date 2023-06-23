@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetchDogs } from '../apis/dog'
 import DogsForm from './DogsForm'
-import DeleteDog from './DeleteDog'
+import Dog from './Dog'
 
 function DogsList() {
   const {
@@ -22,17 +22,7 @@ function DogsList() {
     <>
       <div>
         {dogs.map((dog) => (
-          <div key={dog.id}>
-            <ul>
-              <p>
-                <b>Name:</b> {dog.name}
-              </p>
-              <p>
-                <b>Breed:</b> {dog.breed}
-              </p>
-            </ul>
-            <DeleteDog id={dog.id} />
-          </div>
+          <Dog key={dog.id} dog={dog} />
         ))}
       </div>
       <br />
