@@ -15,3 +15,11 @@ export async function deleteDog(id: number): Promise<void> {
   await db('dogs').where('id', id).delete()
   return
 }
+
+export async function updateDog(id: number, updatedDog: DogData): Promise<Dog> {
+  const [updateDog] = await db('dogs')
+    .where('id', id)
+    .update(updatedDog)
+    .returning('*')
+  return updateDog
+}
