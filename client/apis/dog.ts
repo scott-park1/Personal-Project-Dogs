@@ -17,3 +17,17 @@ export async function addDog(newDog: DogData): Promise<Dog> {
 export async function deleteDog(id: number): Promise<void> {
   await request.delete(`/api/v1/dogs/${id}`)
 }
+
+interface updatedDogParams {
+  id: number
+  updatedDog: DogData
+}
+
+// PATCH /api/v1/dogs/:id
+export async function updateDog({
+  id,
+  updatedDog,
+}: updatedDogParams): Promise<Dog> {
+  const response = await request.patch(`/api/v1/dogs/${id}`).send(updatedDog)
+  return response.body
+}
