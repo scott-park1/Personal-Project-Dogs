@@ -5,4 +5,9 @@ body {
   margin: 0;
   padding: 20px;
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: bisque;
+}
+
+.button {
+  margin-left: 40px;
 }

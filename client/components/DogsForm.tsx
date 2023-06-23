@@ -54,6 +54,7 @@ export default function DogsForm() {
             value={form.name}
           />
         </div>
+        <br />
         <div>
           <label htmlFor="breed">
             <b>Breed:</b>
@@ -66,6 +67,7 @@ export default function DogsForm() {
             value={form.breed}
           />
         </div>
+        <br />
         <button>Add Dog</button>
       </form>
     </div>

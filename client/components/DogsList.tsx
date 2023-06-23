@@ -24,9 +24,9 @@ function DogsList() {
         {dogs.map((dog) => (
           <div key={dog.id}>
             <ul>
-              <h2>
+              <p>
                 <b>Name:</b> {dog.name}
-              </h2>
+              </p>
               <p>
                 <b>Breed:</b> {dog.breed}
               </p>
@@ -35,6 +35,7 @@ function DogsList() {
           </div>
         ))}
       </div>
+      <br />
       <DogsForm />
     </>
   )
