@@ -44,12 +44,12 @@ export default function UpdateDog({ id, updatedDog }: UpdateProps) {
     <div>
       <form onSubmit={handleUpdateDog} aria-label="Update Dog Form">
         <div>
-          <label htmlFor="name">
+          <label htmlFor={`${id}name`}>
             <b>Name:</b>
           </label>
           <br />
           <input
-            id="name"
+            id={`${id}name`}
             name="name"
             onChange={handleDogChange}
             value={form.name}
@@ -57,12 +57,12 @@ export default function UpdateDog({ id, updatedDog }: UpdateProps) {
         </div>
         <br />
         <div>
-          <label htmlFor="breed">
+          <label htmlFor={`${id}breed`}>
             <b>Breed:</b>
           </label>
           <br />
           <input
-            id="breed"
+            id={`${id}breed`}
             name="breed"
             onChange={handleDogChange}
             value={form.breed}
