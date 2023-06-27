@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { updateDog } from '../apis/dog'
 import { DogData } from '../../models/dog'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 interface UpdateProps {
   id: number
@@ -28,7 +28,8 @@ export default function UpdateDog({ id, updatedDog }: UpdateProps) {
     setForm(newForm)
   }
 
-  const handleUpdateDog = () => {
+  const handleUpdateDog = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     updateDogMutation.mutate({ id, updatedDog: form })
   }
 
