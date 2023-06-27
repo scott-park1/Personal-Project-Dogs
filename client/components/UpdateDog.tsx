@@ -6,9 +6,10 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 interface UpdateProps {
   id: number
   updatedDog: DogData
+  setEditDog: (value: boolean) => void
 }
 
-export default function UpdateDog({ id, updatedDog }: UpdateProps) {
+export default function UpdateDog({ id, updatedDog, setEditDog }: UpdateProps) {
   const [form, setForm] = useState<DogData>({
     name: updatedDog.name,
     breed: updatedDog.breed,
@@ -31,6 +32,7 @@ export default function UpdateDog({ id, updatedDog }: UpdateProps) {
   const handleUpdateDog = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     updateDogMutation.mutate({ id, updatedDog: form })
+    setEditDog(false)
   }
 
   if (updateDogMutation.isError) {

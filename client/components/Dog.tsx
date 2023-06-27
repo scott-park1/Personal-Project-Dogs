@@ -14,7 +14,11 @@ function Dog({ dog }: DogProps) {
     <>
       <div>
         {editDog ? (
-          <UpdateDog id={dog.id} updatedDog={dog} />
+          <UpdateDog
+            setEditDog={(value) => setEditDog(value)}
+            id={dog.id}
+            updatedDog={dog}
+          />
         ) : (
           <>
             <p>
